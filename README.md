@@ -45,8 +45,7 @@ $caller->prepend('aaa', 'bbb');
 
 ### Context param
 
-Context contains all information of current execution, use argument with name "$context" of type omitted, "mixed" or "
-\VSR\Extend\Caller\Context" on middlewares or on constructor of class if middleware of type class method non-static.
+Context contains all information of current execution, use argument with name "$context" of type omitted, "mixed" or "\VSR\Extend\Caller\Context" on middlewares or on constructor of class if middleware of type class method non-static.
 
 ```php
 use VSR\Extend\Caller\Context;

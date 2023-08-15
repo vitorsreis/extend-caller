@@ -12,7 +12,9 @@
     ],
     "keywords": [
         "caller",
-        "callback"
+        "callback",
+        "middleware",
+        "queue"
     ],
     "autoload": {
         "psr-4": {
