@@ -25,7 +25,7 @@ composer require vitorsreis/extend-caller
 ### Simple usage
 
 ```php
-use \VSR\Extend\Caller;
+use VSR\Extend\Caller;
 
 $caller = new Caller(static function ($aaa, $bbb, $ccc = 3) { return "$aaa:$bbb:$ccc"; });
 echo $caller->execute([1, 2, /* 3 */]); // output: 1:2:3
