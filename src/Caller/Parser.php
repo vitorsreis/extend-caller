@@ -115,7 +115,7 @@ trait Parser
             $name = $parameter->getName();
             $type = method_exists($parameter, 'getType')
                 ? $parameter->getType()
-                : $parameter->getClass();
+                : (PHP_VERSION_ID < 80000 ? $parameter->getClass() : null);
 
             if (null !== $type) {
                 if (method_exists($type, 'getTypes')) {
@@ -127,7 +127,7 @@ trait Parser
                 } else {
                     $type = ['mixed'];
                 }
-            } elseif (method_exists($parameter, 'isArray') && $parameter->isArray()) {
+            } elseif (PHP_VERSION_ID < 80000 && method_exists($parameter, 'isArray') && $parameter->isArray()) {
                 $type = ['array'];
             } else {
                 $type = ['mixed'];
