@@ -6,9 +6,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/vitorsreis/extend-caller?style=flat-square&color=0476B7)](https://packagist.org/packages/vitorsreis/extend-caller)
 [![Repo Stars](https://img.shields.io/github/stars/vitorsreis/extend-caller?style=social)](https://github.com/vitorsreis/extend-caller)
 
-Flexible and powerful middleware caller for PHP. Supporting multi-middlewares in queue with contexts and persistent
-data.
-Unit test passed versions: ```5.6```, ```7.4```, ```8.1``` and ```8.2```
+Flexible and powerful middleware caller for PHP, supporting multiple middlewares in a queue with contexts and persistent data
+Unit tests have passed on versions: ```5.6```, ```7.4```, ```8.1``` and ```8.2```
 
 ---
 
@@ -45,15 +44,15 @@ $caller->prepend('aaa', 'bbb');
 
 ### Context param
 
-Context contains all information of current execution, use argument with name "$context" of type omitted, "mixed" or "\VSR\Extend\Caller\Context" on middlewares or on constructor of class if middleware of type class method non-static.
+Context contains all information about the current execution. Use an argument with the name "$context" with an omitted type or of type "mixed," or use any name with the type "\VSR\Extend\Caller\Context" in middlewares or in the constructor of a class if the middleware is a non-static class method at any position to receive the argument information.
 
 ```php
 use VSR\Extend\Caller\Context;
 
 new Caller(function ($context) { ... });
-new Caller(mixed $context) { ... }); # Explicit mixed type only PHP 8+
-new Caller(Context $context) { ... });
-new Caller(Context $custom_name_context) { ... });
+new Caller(function (mixed $context) { ... }); # Explicit mixed type only PHP 8+
+new Caller(function (Context $context) { ... });
+new Caller(function (Context $custom_name_context) { ... });
 new Caller(new class {
     public function __construct($context) { ... }
     public function __invoke($context) { ... }
