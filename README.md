@@ -7,7 +7,7 @@
 [![Repo Stars](https://img.shields.io/github/stars/vitorsreis/extend-caller?style=social)](https://github.com/vitorsreis/extend-caller)
 
 Flexible and powerful middleware caller for PHP, supporting multiple middlewares in a queue with contexts and persistent data
-Unit tests have passed on versions: ```5.6```, ```7.4```, ```8.1``` and ```8.2```
+Unit tests have passed on versions: ```5.6```, ```7.4```, ```8.1```, ```8.2``` and  ```8.3```
 
 ---
 
@@ -37,8 +37,8 @@ You can use multiple middlewares in queue, the result of each middleware is pass
 
 ```php
 $caller = new Caller('ccc', 'ddd', ...);
-$caller->append('eee', 'fff', ...);
 $caller->prepend('aaa', 'bbb');
+$caller->append('eee', 'fff', ...);
 // queue: aaa -> bbb -> ccc -> ddd -> eee -> fff -> ...
 ```
 
